@@ -12,6 +12,7 @@ public class StepDefinitions {
 
     GameOfLife game;
     int[][] grid;
+    int[][] res = new int[4][8];
 
     @Before
     public void init() {
@@ -20,6 +21,10 @@ public class StepDefinitions {
         grid[1][4] = 1;
         grid[2][4] = 1;
         grid[2][3] = 1;
+        res[1][3] = 1;
+        res[1][4] = 1;
+        res[2][3] = 1;
+        res[2][4] = 1;
     }
 
     @When("^: A live cell has less than two neighbours$")
@@ -31,6 +36,7 @@ public class StepDefinitions {
     @Then("^: She dies$")
     public void she_dies() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        assertTrue(Arrays.deepEquals(grid, res));
     }
 
     @When("^: A live cell has more than three neighbours$")
