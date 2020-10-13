@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine'
+            label '/usr/bin/docker'
         }
     }
     stages {
