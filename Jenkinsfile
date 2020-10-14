@@ -5,9 +5,6 @@ pipeline {
             label 'master'
         }
     }
-    options {
-        skipDefaultCheckout(true)
-    }
     stages {
         stage('Build') {
             steps {
@@ -19,7 +16,7 @@ pipeline {
     }
     post {
         always {
-            cleanWs deleteDirs: true
+            cleanWs()
         }
     }
 }
