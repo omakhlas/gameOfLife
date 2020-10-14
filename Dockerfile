@@ -1,4 +1,4 @@
-FROM maven:maven:3.6.0-jdk-13
+FROM maven:3-alpine
 
 RUN useradd -m -u 1000 -s /bin/bash cloud_user
 
