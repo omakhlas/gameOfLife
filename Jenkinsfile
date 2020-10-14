@@ -6,7 +6,7 @@ pipeline {
         docker {
             image 'maven:3-alpine'
             label 'master'
-            args '-v /var/maven:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2'
+            args '-v /tmp/maven:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2'
         }
     }
     stages {
